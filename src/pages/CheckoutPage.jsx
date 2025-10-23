@@ -8,7 +8,7 @@ function CheckoutPage() {
       <div className="checkout-header">
         <div className="header-content">
           <div className="checkout-header-left-section">
-            <a href="index.html">
+            <a href="/">
               <img
                 className="logo"
                 src="images/logo.png"
@@ -24,7 +24,7 @@ function CheckoutPage() {
             Checkout (
             <a
               className="return-to-home-link"
-              href="index.html"
+              href="/"
             >
               3 items
             </a>

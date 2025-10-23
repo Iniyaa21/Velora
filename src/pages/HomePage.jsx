@@ -4,11 +4,11 @@ import "./header.css";
 function HomePage() {
   return (
     <>
-    <title>Velora</title>
+      <title>Velora</title>
       <div className="header">
         <div className="left-section">
           <a
-            href="index.html"
+            href="/"
             className="header-link"
           >
             <img
@@ -40,14 +40,14 @@ function HomePage() {
         <div className="right-section">
           <a
             className="orders-link header-link"
-            href="orders.html"
+            href="/orders"
           >
             <span className="orders-text">Orders</span>
           </a>
 
           <a
             className="cart-link header-link"
-            href="checkout.html"
+            href="/checkout"
           >
             <img
               className="cart-icon"
