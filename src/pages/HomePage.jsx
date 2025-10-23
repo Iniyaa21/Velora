@@ -4,6 +4,7 @@ import "./header.css";
 function HomePage() {
   return (
     <>
+    <title>Velora</title>
       <div className="header">
         <div className="left-section">
           <a
