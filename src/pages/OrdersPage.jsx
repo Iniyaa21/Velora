@@ -4,6 +4,11 @@ import "./OrdersPage.css";
 export function OrdersPage() {
   return (
     <>
+      <link
+        rel="icon"
+        type="image/png"
+        href="/orders-favicon.png"
+      />
       <title>Orders</title>
       <Header />
 
@@ -39,7 +44,9 @@ export function OrdersPage() {
                 <div className="product-name">
                   Black and Gray Athletic Cotton Socks - 6 Pairs
                 </div>
-                <div className="product-delivery-date">Arriving on: August 15</div>
+                <div className="product-delivery-date">
+                  Arriving on: August 15
+                </div>
                 <div className="product-quantity">Quantity: 1</div>
                 <button className="buy-again-button button-primary">
                   <img
@@ -66,7 +73,9 @@ export function OrdersPage() {
                 <div className="product-name">
                   Adults Plain Cotton T-Shirt - 2 Pack
                 </div>
-                <div className="product-delivery-date">Arriving on: August 19</div>
+                <div className="product-delivery-date">
+                  Arriving on: August 19
+                </div>
                 <div className="product-quantity">Quantity: 2</div>
                 <button className="buy-again-button button-primary">
                   <img
@@ -113,7 +122,9 @@ export function OrdersPage() {
 
               <div className="product-details">
                 <div className="product-name">Intermediate Size Basketball</div>
-                <div className="product-delivery-date">Arriving on: June 17</div>
+                <div className="product-delivery-date">
+                  Arriving on: June 17
+                </div>
                 <div className="product-quantity">Quantity: 2</div>
                 <button className="buy-again-button button-primary">
                   <img
@@ -138,4 +149,3 @@ export function OrdersPage() {
     </>
   );
 }
-
