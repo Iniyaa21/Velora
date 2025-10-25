@@ -1,10 +1,10 @@
-import HomePage from "./pages/HomePage";
-import CheckoutPage from "./pages/CheckoutPage";
-import OrdersPage from "./pages/OrdersPage";
+import { HomePage } from "./pages/HomePage";
+import { CheckoutPage } from "./pages/CheckoutPage";
+import { OrdersPage } from "./pages/OrdersPage";
 import { Routes, Route } from "react-router";
 import "./App.css";
 
-function App() {
+export function App() {
   return (
     <>
       <Routes>
@@ -20,10 +20,8 @@ function App() {
           path="orders"
           element={<OrdersPage />}
         />
-
       </Routes>
     </>
   );
 }
 
-export default App;

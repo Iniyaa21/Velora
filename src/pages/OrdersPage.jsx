@@ -1,7 +1,6 @@
 import "./OrdersPage.css";
-import "./header.css";
 
-function OrdersPage() {
+export function OrdersPage() {
   return (
     <>
       <title>Orders</title>
@@ -191,4 +190,3 @@ function OrdersPage() {
   );
 }
 
-export default OrdersPage;
