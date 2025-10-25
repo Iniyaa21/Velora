@@ -118,6 +118,10 @@
   font-weight: 700;
 }
 
+.header .orders-link.active {
+  text-decoration: underline;
+}
+
 .header .cart-link {
   color: white;
   display: flex;
