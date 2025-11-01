@@ -1,12 +1,103 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+# 🛍️ Velora
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Velora** is a modern and minimalistic **e-commerce web application** built with **React + Vite** using **JavaScript**.
+This repository contains only the **frontend code** and is currently **a work in progress**.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚧 Project Status
+
+> Velora’s frontend is under active development.
+> Basic page layouts and UI components have been set up, with more features coming soon!
+
+---
+
+## ✨ Current Features
+
+* 🏠 **Home Page:** Displays products in a clean grid layout
+* 💳 **Checkout Page:** Includes order summary and payment sections
+* 📦 **Orders Page:** Lists past and current orders
+* 🚚 **Tracking Page:** Displays order tracking status
+* ⚡ **Reusable Components:** Header and other shared UI elements
+* 🌐 **Vite-Powered:** Lightning-fast builds and hot reloads
+
+---
+
+## 🧰 Tech Stack
+
+* **Frontend Framework:** React
+* **Build Tool:** Vite
+* **Language:** JavaScript
+* **Styling:** CSS
+
+---
+
+## 🏗️ Installation & Setup
+
+Run the project locally with the following steps:
+
+```bash
+# Clone the repository
+git clone https://github.com/Iniyaa21/velora.git
+
+# Navigate into the folder
+cd velora
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+---
+
+## 📁 Project Structure
+
+```
+velora/
+│
+├── src/
+│   ├── components/
+│   │   └── Header.jsx
+│   │
+│   ├── pages/
+│   │   ├── checkout/
+│   │   │   ├── CheckoutHeader.jsx
+│   │   │   ├── CheckoutPage.jsx
+│   │   │   ├── OrderSummary.jsx
+│   │   │   └── PaymentSummary.jsx
+│   │   │
+│   │   ├── home/
+│   │   │   ├── HomePage.jsx
+│   │   │   └── ProductsGrid.jsx
+│   │   │
+│   │   ├── NotFoundPage.jsx
+│   │   ├── OrdersPage.jsx
+│   │   └── TrackingPage.jsx
+│   │
+│   └── App.jsx
+│
+└── index.html
+```
+
+---
+
+## 🔮 Upcoming Plans
+
+* 🛒 Product filtering and search
+* 👤 User login & profile management
+* 🎨 Enhanced UI and animations
+* 🌈 API integration for dynamic product data
+
+---
+
+## 💬 Feedback
+
+Have suggestions or feature ideas?
+Open an **issue** or start a **discussion** — contributions are always welcome!
+
+---
