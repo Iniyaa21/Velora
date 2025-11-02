@@ -69,7 +69,7 @@
 }
 
 .checkout-page .delivery-date {
-  color: rgb(60, 123, 200);
+  color: #8A2BE2;
   font-weight: 700;
   font-size: 19px;
   margin-top: 5px;
@@ -192,7 +192,7 @@
 }
 
 .checkout-page .total-row {
-  color: rgb(60, 123, 200);
+  color: #8A2BE2;
   font-weight: 700;
   font-size: 18px;
 

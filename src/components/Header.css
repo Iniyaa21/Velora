@@ -86,7 +86,7 @@
 }
 
 .header .search-button {
-  background-color: rgb(172, 198, 228);
+  background-color: #dcc2f5;
   border: none;
   width: 45px;
   height: 40px;
@@ -145,7 +145,7 @@
 }
 
 .header .cart-quantity {
-  color: rgb(60, 123, 200);
+  color: #8A2BE2;
   font-size: 14px;
   font-weight: 700;
 
