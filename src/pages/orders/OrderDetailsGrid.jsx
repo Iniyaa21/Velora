@@ -16,7 +16,7 @@ export function OrderDetailsGrid({ order }) {
             <div className="product-details">
               <div className="product-name">{product.product.name}</div>
               <div className="product-delivery-date">
-                Arriving on:{" "}
+                {(((dayjs().valueOf() - order.orderTimeMs) / (product.estimatedDeliveryTimeMs - order.orderTimeMs)) * 100) < 100 ? "Arriving" : "Delivered"} on:{" "}
                 {dayjs(product.estimatedDeliveryTimeMs).format("MMMM D")}
               </div>
               <div className="product-quantity">
