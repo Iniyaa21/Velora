@@ -69,7 +69,7 @@
 }
 
 .checkout-page .delivery-date {
-  color: #8A2BE2;
+  color: #8a2be2;
   font-weight: 700;
   font-size: 19px;
   margin-top: 5px;
@@ -110,7 +110,6 @@
 }
 
 .checkout-page .product-price {
-
   font-weight: 700;
   margin-bottom: 5px;
 }
@@ -152,7 +151,6 @@
 }
 
 .checkout-page .delivery-option-date {
-
   font-weight: 500;
   margin-bottom: 3px;
 }
@@ -192,7 +190,7 @@
 }
 
 .checkout-page .total-row {
-  color: #8A2BE2;
+  color: #8a2be2;
   font-weight: 700;
   font-size: 18px;
 
@@ -208,4 +206,8 @@
 
   margin-top: 20px;
   margin-bottom: 19px;
+}
+
+.update-quantity-input {
+  width: 50px;
 }
