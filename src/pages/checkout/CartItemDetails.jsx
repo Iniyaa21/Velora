@@ -19,6 +19,16 @@ export function CartItemDetails({ cartItem, loadCart }) {
     await axios.delete(`/api/cart-items/${cartItem.productId}`);
     await loadCart();
   };
+
+  const handleQuantityKeyDown = (event) => {
+    if (event.key === "Enter"){
+      changeQuantity();
+    }
+    else if (event.key === "Escape"){
+      setQuantity(cartItem.quantity);
+      setIsQuantityBeingChanged(false);
+    }
+  }
   return (
     <>
       <img
@@ -42,6 +52,7 @@ export function CartItemDetails({ cartItem, loadCart }) {
                   let quantityInput = Number(event.target.value);
                   setQuantity(quantityInput);
                 }}
+                onKeyDown={handleQuantityKeyDown}
               />
             ) : (
               <span className="quantity-label">{cartItem.quantity}</span>
