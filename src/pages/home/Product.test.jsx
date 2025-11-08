@@ -1,4 +1,4 @@
-import { it, expect, describe, vi } from "vitest";
+import { it, expect, describe, vi, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import axios from "axios";
@@ -7,8 +7,12 @@ import { Product } from "./Product";
 vi.mock("axios");
 
 describe("Product component", () => {
-  it("displays the product details correctly", () => {
-    const product = {
+  let product;
+
+  let loadCart;
+
+  beforeEach(() => {
+    product = {
       id: "b86ddc8b-3501-4b17-9889-a3bad6fb585f",
       image: "images/products/women-sandal-heels-white-pink.jpg",
       name: "Women's Sandal Heels - Pink",
@@ -20,9 +24,9 @@ describe("Product component", () => {
       keywords: ["womens", "shoes", "heels", "sandals"],
     };
 
-    //Creating a mock function
-    const loadCart = vi.fn();
-
+    loadCart = vi.fn();
+  });
+  it("displays the product details correctly", () => {
     render(
       <Product
         product={product}
@@ -44,20 +48,6 @@ describe("Product component", () => {
   });
 
   it("adds a product to the cart", async () => {
-    const product = {
-      id: "b86ddc8b-3501-4b17-9889-a3bad6fb585f",
-      image: "images/products/women-sandal-heels-white-pink.jpg",
-      name: "Women's Sandal Heels - Pink",
-      rating: {
-        stars: 4.5,
-        count: 2286,
-      },
-      priceCents: 5300,
-      keywords: ["womens", "shoes", "heels", "sandals"],
-    };
-
-    const loadCart = vi.fn();
-
     render(
       <Product
         product={product}
