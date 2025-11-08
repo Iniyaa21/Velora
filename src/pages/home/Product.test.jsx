@@ -8,8 +8,8 @@ vi.mock("axios");
 
 describe("Product component", () => {
   let product;
-
   let loadCart;
+  let user;
 
   beforeEach(() => {
     product = {
@@ -25,6 +25,8 @@ describe("Product component", () => {
     };
 
     loadCart = vi.fn();
+
+    user = userEvent.setup();
   });
   it("displays the product details correctly", () => {
     render(
@@ -55,7 +57,6 @@ describe("Product component", () => {
       />
     );
 
-    const user = userEvent.setup();
     const addToCartButton = screen.getByTestId("add-to-cart-button");
     await user.click(addToCartButton);
 
@@ -77,10 +78,15 @@ describe("Product component", () => {
 
     expect(quantitySelector).toHaveValue("1");
 
-    const user = userEvent.setup(); 
-    await user.selectOptions(quantitySelector, "3"); 
+    await user.selectOptions(quantitySelector, "3");
     expect(quantitySelector).toHaveValue("3");
 
-
+    const addToCartButton = screen.getByTestId("add-to-cart-button");
+    await user.click(addToCartButton);
+    expect(axios.post).toHaveBeenCalledWith("/api/cart-items", {
+      productId: "b86ddc8b-3501-4b17-9889-a3bad6fb585f",
+      quantity: 3,
+    });
+    expect(loadCart).toHaveBeenCalled();
   });
 });
