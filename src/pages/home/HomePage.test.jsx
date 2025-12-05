@@ -10,9 +10,11 @@ vi.mock("axios");
 
 describe("HomePage component", () => {
   let loadCart;
+  let user;
 
   beforeEach(() => {
     loadCart = vi.fn();
+    user = userEvent.setup();
 
     axios.get.mockImplementation(async (urlPath) => {
       if (urlPath === "/api/products") {
@@ -67,5 +69,40 @@ describe("HomePage component", () => {
     expect(
       within(productContainers[1]).getByText("Blackout Curtains Set - Beige")
     ).toBeInTheDocument();
+  });
+
+  it("adds product to cart correctly", async () => {
+    render(
+      <MemoryRouter>
+        <HomePage
+          cart={[]}
+          loadCart={loadCart}
+        />
+      </MemoryRouter>
+    );
+
+    const productContainers = await screen.findAllByTestId("product-container");
+
+    const addToCartButton1 = within(productContainers[0]).getByTestId(
+      "add-to-cart-button"
+    );
+    await user.click(addToCartButton1);
+
+    const addToCartButton2 = within(productContainers[1]).getByTestId(
+      "add-to-cart-button"
+    );
+    await user.click(addToCartButton2);
+
+    expect(axios.post).toHaveBeenNthCalledWith(1, "/api/cart-items", {
+      productId: "aad29d11-ea98-41ee-9285-b916638cac4a",
+      quantity: 1,
+    });
+
+    expect(axios.post).toHaveBeenNthCalledWith(2, "/api/cart-items", {
+      productId: "901eb2ca-386d-432e-82f0-6fb1ee7bf969",
+      quantity: 1,
+    });
+
+    expect(loadCart).toHaveBeenCalledTimes(2);
   });
 });
