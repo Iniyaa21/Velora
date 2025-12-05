@@ -4,7 +4,6 @@ import { MemoryRouter } from "react-router";
 import userEvent from "@testing-library/user-event";
 import axios from "axios";
 import { HomePage } from "./HomePage";
-import { before } from "node:test";
 
 vi.mock("axios");
 
