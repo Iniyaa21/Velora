@@ -83,6 +83,16 @@ describe("HomePage component", () => {
 
     const productContainers = await screen.findAllByTestId("product-container");
 
+    const quantitySelector1 = within(productContainers[0]).getByTestId(
+      "quantity-selector"
+    );
+    await user.selectOptions(quantitySelector1, "2");
+
+    const quantitySelector2 = within(productContainers[1]).getByTestId(
+      "quantity-selector"
+    );
+    await user.selectOptions(quantitySelector2, "3");
+
     const addToCartButton1 = within(productContainers[0]).getByTestId(
       "add-to-cart-button"
     );
@@ -95,12 +105,12 @@ describe("HomePage component", () => {
 
     expect(axios.post).toHaveBeenNthCalledWith(1, "/api/cart-items", {
       productId: "aad29d11-ea98-41ee-9285-b916638cac4a",
-      quantity: 1,
+      quantity: 2,
     });
 
     expect(axios.post).toHaveBeenNthCalledWith(2, "/api/cart-items", {
       productId: "901eb2ca-386d-432e-82f0-6fb1ee7bf969",
-      quantity: 1,
+      quantity: 3,
     });
 
     expect(loadCart).toHaveBeenCalledTimes(2);
